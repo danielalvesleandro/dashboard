@@ -25,7 +25,11 @@ drwxr-xr-x 4 developer developer 4096 mai 29 18:58 refs
 # README.md utiliza a linguagem Markdown
 # https://dillinger.io/ é um editor online de markdown
 
-
+git remote add origin https://github.com/danielalvesleandro/dashboard.git
+git commit -m 'primeiro commit'
+git add .
+git commit -am 'primeiro commit'
+git push origin master
 
 
 # criar snaphot
