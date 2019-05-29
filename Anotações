@@ -27,12 +27,14 @@ drwxr-xr-x 4 developer developer 4096 mai 29 18:58 refs
 
 git remote add origin https://github.com/danielalvesleandro/dashboard.git
 git commit -m 'primeiro commit'
+# criar snaphot
 git add .
 git commit -am 'primeiro commit'
 git push origin master
 
-
-# criar snaphot
+developer@developer:~/python-521/dashboard$ mkdir templates
+developer@developer:~/python-521/dashboard$ mkdir blueprints
+developer@developer:~/python-521/dashboard$ mkdir static
 
 git add .
 git commit -m 'description'
