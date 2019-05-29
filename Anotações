@@ -1,0 +1,39 @@
+cd dashboard
+
+# git é um serviço a apartado de versionamento, 
+# git init cria um repositório local (.git)
+# sempre fazer ao criar um projeto
+git init
+
+developer@developer:~/python-521/dashboard/.git$ ls -l
+total 32
+drwxr-xr-x 2 developer developer 4096 mai 29 18:58 branches
+-rw-r--r-- 1 developer developer   92 mai 29 18:58 config
+-rw-r--r-- 1 developer developer   73 mai 29 18:58 description
+-rw-r--r-- 1 developer developer   23 mai 29 18:58 HEAD
+drwxr-xr-x 2 developer developer 4096 mai 29 18:58 hooks
+drwxr-xr-x 2 developer developer 4096 mai 29 18:58 info
+drwxr-xr-x 4 developer developer 4096 mai 29 18:58 objects
+drwxr-xr-x 4 developer developer 4096 mai 29 18:58 refs
+
+# lista de arquivos e pastas a serem ignoradas 
+# e não serem sincronizadas para o repositório
+> .gitignore
+
+# OBS.: mínimo para usar o GIT: .git e .gitignore
+
+# README.md utiliza a linguagem Markdown
+# https://dillinger.io/ é um editor online de markdown
+
+
+
+
+# criar snaphot
+
+git add .
+git commit -m 'description'
+
+
+
+
+
