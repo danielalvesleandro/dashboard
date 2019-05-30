@@ -32,14 +32,39 @@ git add .
 git commit -am 'primeiro commit'
 git push origin master
 
-developer@developer:~/python-521/dashboard$ mkdir templates
-developer@developer:~/python-521/dashboard$ mkdir blueprints
-developer@developer:~/python-521/dashboard$ mkdir static
+mkdir templates #scripts html
+mkdir blueprints #scripts python
+mkdir static #scripts css / não usado nesse projeto
 
-git add .
-git commit -m 'description'
+cd templates/
+> index.html
+> sign-in.html
+> docker.html
+> jenkins.html
+> gitlab.html
 
+cd ../blueprints
 
+> docker.py
+> jenkins.py
+> gitlab.py
+> ldap.py
+> __init__.py  # indica que o diretório é um módulo do python)
 
+python3 -m virtualenv --python=$(which python3) env
 
+source env/bin/activate
+
+pip install flask
+
+pip freeze > requirements.txt # imprime todas dependências do projeto, facilitando a instalação num novo projeto
+
+# Montando o dashboard
+
+- montar o cabeçalho do index.html
+- montar o cabeçalho do docker.html
+
+# blueprint módulo do flask / projeto independente com rotas prontas para serem reutilizadas, etc..
+
+#  ctrl+A ctrl+K ctrl+F reestruturar código html / identações
 
