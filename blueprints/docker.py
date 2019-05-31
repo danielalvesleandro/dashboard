@@ -1,6 +1,9 @@
 
 
 import flask
+import docker
+
+connection = docker.DockerClient()
 
 blueprint = flask.Blueprint('docker', __name__)
 
@@ -8,8 +11,29 @@ blueprint = flask.Blueprint('docker', __name__)
 def get_docker():
 
     context = {
-        'page': 'docker'
+        'page': 'docker',
+        'containers': connection.containers.list()
     }
 
     return flask.render_template('docker.html', context=context)
+
+# @blueprint.route('/docker/start', methods=[ 'PUT' ])
+# def start_container():
+
+#     context = {
+#         'page': 'docker',
+#         'containers': connection.containers.list()
+#     }
+
+#     return flask.render_template('docker.html', context=context)
+
+# @blueprint.route('/docker/stop', methods=[ 'PUT' ])
+# def stop_container():
+
+#     context = {
+#         'page': 'docker',
+#         'containers': connection.containers.list()
+#     }
+
+#     return flask.render_template('docker.html', context=context)
 

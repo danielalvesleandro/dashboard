@@ -68,3 +68,113 @@ pip freeze > requirements.txt # imprime todas dependências do projeto, facilita
 
 #  ctrl+A ctrl+K ctrl+F reestruturar código html / identações
 
+#######################################
+# AULA 04
+#######################################
+
+DOCKER:
+
+# repositório de imagens
+https://hub.docker.com
+
+DockerFile: define os passos para vc ter a máquina como uma vm, uma espécie de um templates, define os serviços
+
+O container não possui kernel, a ideia é rodar a aplicação sem o peso do kernel, isso fica somente no host
+
+Container é volátil, ele nasceu pra morrer
+
++ Agilidade, Segurança, Portabilidade, Redução de custo
+- Curva de aprendizagem
+
+Aplicação roda totalmente isolada do OS (somente bins/libs)
+
+
+curl -fsSL https://get.docker.com -o get-docker.sh
+
+sudo sh get-docker.sh
+
+sudo usermod -aG docker developer
+
+logout/login
+
+# lista containers ativos
+docker ps
+
+# lista todos containers (ativos e inativos)
+docker ps -a
+
+# sobe o container básico do hello-world
+docker run hello-world
+
+CONTAINER ID        IMAGE               COMMAND             CREATED              STATUS                          PORTS               NAMES
+98f0698c9500        hello-world         "/hello"            About a minute ago   Exited (0) About a minute ago                       reverent_mirzakhani
+
+ID: único identificador (espaço na memória)
+IMAGE: template
+COMMAND: comando a ser executado ao fim do provisionamento
+CREATED: tempo de provisionamento
+STATUS: estado atual do container
+
+# subir um container do mongodb redirecionando a porta 27017 do container para a 27017 do host
+docker run -it -p 27017:27017 mongo
+
+# dit não prende a console (background)
+docker run -dit -p 27017:27017 mongo
+
+# sobe no modo persistente (somente o /data/db) / guarda em /var/lib/docker/volumes/data
+docker run -dit -p 27017:27017 -v data:/data/db mongo
+
+# sobe no modo persistente
+docker run -dit -p 27017:27017 -v /folder:/data/db mongo
+
+# lista volumes do docker
+docker volume ls
+
+# para o container pelo ID e pelo nome (aleatório)
+docker stop bac6be60dd00
+docker stop modest_stallman
+
+# acessar a console do container
+docker exec -it 371e9bfc3948 bash
+
+# Criar imagem Python
+- criar arquivo chamado Dockerfile com o seguinte conteúdo:
+
+#########################################################################################
+# imagem base
+FROM python:3.6.7
+
+# cria o diretório /app e faz cd para dentro dele
+WORKDIR /app
+
+# copia o conteúdo do diretório /app para dentro do diretório /app no container
+ADD . /app
+
+# instala as dependências do projeto
+RUN pip install -r requirements.txt
+
+# roda a aplicação app
+CMD [ "python", "app.py"]
+#########################################################################################
+
+# constrói o container chamado flask-app a partir da imagem flask-app
+docker build -t flask-app .
+
+# executa o container com o flask na porta 80
+docker run -dit -p 80:5000 flask-app
+
+# lista as imagens no repositório local
+docker image ls
+
+# remove o container especificando pelo id
+docker rm 371e9bfc3948
+
+# remove a imagem especificando pelo id
+docker rmi 371e9bfc3948
+
+
+
+source env/bin/activate
+pip install docker
+pip freeze > requirements.txt
+

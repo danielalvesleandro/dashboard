@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Python | SysAdmin</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 </head>
@@ -19,7 +20,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item {{ 'active' if context.page == 'docker' else '' }}">
-              <a class="nav-link" href="/docker">Docker <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="/docker">Docker <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item {{ 'active' if context.page == 'jenkins' else '' }}">
                 <a class="nav-link" href="/jenkins">Jenkins <span class="sr-only">(current)</span></a>
@@ -35,6 +36,7 @@
    <div class="container mt-3">
         <div class="card shadow rounded">
             <div class="card-header">
+                <i class="fab fa-docker"></i>
                 {{ context.page.capitalize() }}
             </div>
             <div class="card-body">
