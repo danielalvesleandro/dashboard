@@ -172,9 +172,47 @@ docker rm 371e9bfc3948
 # remove a imagem especificando pelo id
 docker rmi 371e9bfc3948
 
+# remove todos containers parados
+docker system prune
 
 
 source env/bin/activate
 pip install docker
 pip freeze > requirements.txt
+
+developer@developer:~/python-521/dashboard$ git add .
+developer@developer:~/python-521/dashboard$ git commit -m 'Aula 5'
+On branch master
+nothing to commit, working tree clean
+developer@developer:~/python-521/dashboard$ git push origin master
+
+
+AULA 5
+
+# configurar o docker para aceitar requisições externas (em relação ao host)
+
+sudo cp /lib/systemd/system/docker.service /etc/systemd/system/
+
+Editar o arquivo copiar e adicionar "-H tcp://0.0.0.0:2376" no final da linha ExecStart
+
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+netstat -an | grep 2376
+
+
+Docker Compose
+
+- formato yaml
+- especifica diversas imagens para vc rodar (sobe diversos containers de uma vez)
+
+
+JENKINS
+
+pip install python-jenkins
+pip freeze > requirements.txt
+
+
+
+
+
 

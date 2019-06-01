@@ -12,28 +12,28 @@ def get_docker():
 
     context = {
         'page': 'docker',
-        'containers': connection.containers.list()
+        'containers': connection.containers.list(all=True)
     }
 
     return flask.render_template('docker.html', context=context)
 
-# @blueprint.route('/docker/start', methods=[ 'PUT' ])
-# def start_container():
+@blueprint.route('/docker/start/<string:containerid>', methods=[ 'GET' ])
+def start_container(containerid):
+    
+    container = connection.containers.get(containerid)
 
-#     context = {
-#         'page': 'docker',
-#         'containers': connection.containers.list()
-#     }
+    if container:
+        container.start()
 
-#     return flask.render_template('docker.html', context=context)
+    return flask.redirect('/docker')
 
-# @blueprint.route('/docker/stop', methods=[ 'PUT' ])
-# def stop_container():
+@blueprint.route('/docker/stop/<string:containerid>', methods=[ 'GET' ])
+def stop_container(containerid):
 
-#     context = {
-#         'page': 'docker',
-#         'containers': connection.containers.list()
-#     }
+    container = connection.containers.get(containerid)
 
-#     return flask.render_template('docker.html', context=context)
+    if container:
+        container.stop()
+
+    return flask.redirect('/docker')
 
