@@ -212,7 +212,46 @@ pip install python-jenkins
 pip freeze > requirements.txt
 
 
+AULA 6
 
+GIT
 
+- versionador de códigos
+- possibilidade de gerar snapshots da versão / restaurar quando necessário
+- muito pesado
+- github/gitbucket é um repositório remoto centralizado na internet para as pessoas trabalharem em conjunto
+- gitlab solução opensource para utilização em instuições de forma privada (instalado na própria infra)
+- gogs poderá substituir o gitlab em popularidade nos próximos anos / mais leve
 
+GIT LAB
 
+docker run -dit -p 443:443 -p 8000:80 gitlab/gitlab-ce
+docker logs -f b8c9506e4da2
+
+migrations: criam e populam estruturas de dados / versionamento dos dados existentes no banco postgres existente dentro do gitlab / parecido com o dump
+executa ao iniciar o container com o gitlab, se não especificar os volumes no SO ao parar e subir o container vai rodar novamente
+
+definir uma nova senha
+registrar um usuário em seguida cairá nesta página:
+http://localhost:8000/dashboard/projects
+
+Criar projeto chamado "python-521"
+
+git remote add gitlab http://localhost:8000/daniel.leandro/python-521.git
+git remote set-url gitlab http://localhost:8000/daniel.leandro/python-521.git (alterar/corrigir a url)
+git remote show
+git remote show gitlab
+git log (mostra histórico de commits)
+git push gitlab master
+
+branch usado para controlar funcionalidades (uma branch para cada desenv, faz o merge das branches para a master)
+log usado para controlar 
+
+Criar conta no gitlab.com
+
+git remote set-url gitlab https://gitlab.com/daniel.leandro/python-521.git
+criar personal acces token (settings / sexta opção)
+
+- Adicionar hash no código gitlab.py
+
+### usar API gitlab

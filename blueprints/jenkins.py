@@ -17,7 +17,7 @@ blueprint = flask.Blueprint('jenkins', __name__)
 def get_jenkins():
 
     context = {
-        'page': 'jenkins',
+        'page': 'jobs',
         'jobs': connection.get_jobs()
     }
 

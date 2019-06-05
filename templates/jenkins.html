@@ -1,13 +1,14 @@
 {% extends 'index.html' %}
 
 {% block content%}
+{{ context.commits }}
 <table class="table table-hover table-dark">
     <thead>
         <tr>
             <th scope="col">Job</th>
             <th scope="col">Status</th>
-            <th scope="col">Última vez</th>
-            <th scope="col">Ações</th>
+            <th scope="col">Last run</th>
+            <th scope="col">Actions</th>
         </tr>
     </thead>
     <tbody>

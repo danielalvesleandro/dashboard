@@ -11,7 +11,7 @@ blueprint = flask.Blueprint('docker', __name__)
 def get_docker():
 
     context = {
-        'page': 'docker',
+        'page': 'containers',
         'containers': connection.containers.list(all=True)
     }
 

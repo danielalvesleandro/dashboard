@@ -1,5 +1,28 @@
 {% extends 'index.html' %}
 
 {% block content%}
-Gitlab
+<table class="table table-hover table-dark">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Author</th>
+            <th scope="col">Commits</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for p in context.projects %}
+        <tr>
+            <th scope="row">{{ p.id }}</th>
+            <td>{{ p.name }} </td>
+            <td>{{ p.owner.name }}</td>
+            <td>
+                <a href="/gitlab/{{ p.id }}">
+                <i class="fas fa-external-link-square-alt"></i>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock %}
