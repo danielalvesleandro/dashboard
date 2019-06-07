@@ -1,20 +1,28 @@
 
+import logging
 
 import flask
 import docker
+
+import services.auth
 
 connection = docker.DockerClient()
 
 blueprint = flask.Blueprint('docker', __name__)
 
 @blueprint.route('/docker', methods=[ 'GET' ])
+@services.auth.login_required
 def get_docker():
+
+    if not flask.session.get('email'):
+        return flask.redirect('/sign-in')
 
     context = {
         'page': 'containers',
         'containers': connection.containers.list(all=True)
     }
 
+    logging.debug('{} acessou rota docker'.format(email))
     return flask.render_template('docker.html', context=context)
 
 @blueprint.route('/docker/start/<string:containerid>', methods=[ 'GET' ])

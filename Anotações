@@ -254,4 +254,76 @@ criar personal acces token (settings / sexta opção)
 
 - Adicionar hash no código gitlab.py
 
-### usar API gitlab
+AULA 08
+
+OpenLDAP
+
+- ferramenta ldap opensource
+- schemas contém uma lista de classe de objetos
+
+- criar o arquivo docker-compose.yml com o conteúdo abaixo:
+
+#######################################################
+# docker-compose.yml
+version: '3'
+services:
+              
+    openldap:
+        image: osixia/openldap:latest
+        environment:
+            LDAP_DOMAIN: "dexter.com.br"
+            LDAP_ADMIN_PASSWORD: "4linux"
+        ports:
+            - "636:636"
+            - "389:389"
+#######################################################
+
+docker-compose up
+
+pip install ldap3
+
+python
+>>> import ldap3
+>>> USERNAME = 'admin'
+>>> PASSWORD = '4linux'
+>>> server = ldap3.Server('ldap://127.0.0.1:389')
+>>> connection = ldap3.Connection(server, 'cn={},dc=dexter,dc=com,dc=br'.format(USERNAME),PASSWORD)
+>>> connection.bind()
+>>> print(connection)
+
+>>> user = {
+... 'cn': 'Daniel',
+... 'sn': 'Leandro',
+... 'mail': 'daniel.leandro@outlook.com.br',
+... 'uidNumber': '123',
+... 'gidNumber': '123',
+... 'uid': 'daniel',
+... 'homeDirectory': '/home/daniel',
+... 'userPassword': '4linux'
+
+>>> objectClass = [ 'top', 'person', 'organizationalPerson', 'inetOrgPerson', 'posixAccount' ]
+>>> cn = 'uid={},dc=dexter,dc=com,dc=br'.format(user['mail'])
+>>> res = connection.add(cn, objectClass, user)
+
+>>> email = 'daniel.leandro@outlook.com.br'
+>>> dn = 'uid={},dc=dexter,dc=com,dc=br'.format(email)
+>>> connection.search(
+... dn,
+... '(objectClass=person)',
+... attributes=['sn', 'userPassword']
+... )
+
+>>> connection.entries
+[DN: uid=daniel.leandro@outlook.com.br,dc=dexter,dc=com,dc=br - STATUS: Read - READ TIME: 2019-06-05T20:54:22.750060
+    sn: Leandro
+    userPassword: b'4linux'
+
+# o 'b' indica que é formato byte (melhor tráfego pela rede)
+
+>>> import hashlib
+>>> nome = 'Daniel Alves Leandro'
+>>> hash = hashlib.md5(nome.encode()).digest()
+>>> hash
+b"'\x88\xc2\xee\xd69\xbf\x85\x8e\xf5~u\x15\xefO\x1e"
+
+

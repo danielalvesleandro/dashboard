@@ -1,0 +1,33 @@
+2019-06-06 21:54:07,480 [WARNING] werkzeug
+2019-06-06 21:54:07,484 [INFO] werkzeug
+2019-06-06 21:55:59,995 [INFO] werkzeug
+[06/06/2019 21:57:05] [INFO] werkzeug[_log] [_internal.py, 122]  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+[06/06/2019 21:57:05] [INFO] werkzeug[_log] [_internal.py, 122]  * Restarting with stat
+[06/06/2019 21:57:06] [WARNING] werkzeug[_log] [_internal.py, 122]  * Debugger is active!
+[06/06/2019 21:57:06] [INFO] werkzeug[_log] [_internal.py, 122]  * Debugger PIN: 333-820-099
+[06/06/2019 21:57:15] [INFO] werkzeug[_log] [_internal.py, 122] 127.0.0.1 - - [06/Jun/2019 21:57:15] "GET /sign-in HTTP/1.1" 200 -
+[06/06/2019 21:58:08] [INFO] werkzeug[_log] [_internal.py, 122]  * Detected change in '/home/developer/python-521/dashboard/app.py', reloading
+[06/06/2019 21:58:08] [INFO] werkzeug[_log] [_internal.py, 122]  * Restarting with stat
+[06/06/2019 21:58:09] [WARNING] werkzeug[_log] [_internal.py, 122]  * Debugger is active!
+[06/06/2019 21:58:09] [INFO] werkzeug[_log] [_internal.py, 122]  * Debugger PIN: 333-820-099
+[06/06/2019 21:59:54] [INFO] werkzeug[_log] [_internal.py, 122]  * Detected change in '/home/developer/python-521/dashboard/blueprints/docker.py', reloading
+[06/06/2019 21:59:55] [INFO] werkzeug[_log] [_internal.py, 122]  * Restarting with stat
+[06/06/2019 21:59:56] [WARNING] werkzeug[_log] [_internal.py, 122]  * Debugger is active!
+[06/06/2019 21:59:56] [INFO] werkzeug[_log] [_internal.py, 122]  * Debugger PIN: 333-820-099
+[06/06/2019 22:00:38] [INFO] werkzeug[_log] [_internal.py, 122]  * Detected change in '/home/developer/python-521/dashboard/blueprints/docker.py', reloading
+[06/06/2019 22:00:38] [INFO] werkzeug[_log] [_internal.py, 122]  * Restarting with stat
+[06/06/2019 22:00:40] [WARNING] werkzeug[_log] [_internal.py, 122]  * Debugger is active!
+[06/06/2019 22:00:40] [INFO] werkzeug[_log] [_internal.py, 122]  * Debugger PIN: 333-820-099
+[06/06/2019 22:02:53] [INFO] werkzeug[_log] [_internal.py, 122] 127.0.0.1 - - [06/Jun/2019 22:02:53] "GET /docker HTTP/1.1" 302 -
+[06/06/2019 22:02:53] [INFO] werkzeug[_log] [_internal.py, 122] 127.0.0.1 - - [06/Jun/2019 22:02:53] "GET /sign-in HTTP/1.1" 200 -
+[06/06/2019 22:05:20] [INFO] werkzeug[_log] [_internal.py, 122]  * Detected change in '/home/developer/python-521/dashboard/blueprints/sign_in.py', reloading
+[06/06/2019 22:05:20] [INFO] werkzeug[_log] [_internal.py, 122]  * Restarting with stat
+[06/06/2019 22:05:21] [WARNING] werkzeug[_log] [_internal.py, 122]  * Debugger is active!
+[06/06/2019 22:05:21] [INFO] werkzeug[_log] [_internal.py, 122]  * Debugger PIN: 333-820-099
+[06/06/2019 22:06:26] [INFO] werkzeug[_log] [_internal.py, 122]  * Detected change in '/home/developer/python-521/dashboard/blueprints/sign_in.py', reloading
+[06/06/2019 22:06:26] [INFO] werkzeug[_log] [_internal.py, 122]  * Restarting with stat
+[06/06/2019 22:06:28] [WARNING] werkzeug[_log] [_internal.py, 122]  * Debugger is active!
+[06/06/2019 22:06:28] [INFO] werkzeug[_log] [_internal.py, 122]  * Debugger PIN: 333-820-099
+[06/06/2019 22:06:32] [INFO] werkzeug[_log] [_internal.py, 122] 127.0.0.1 - - [06/Jun/2019 22:06:32] "GET /sign-in HTTP/1.1" 200 -
+[06/06/2019 22:06:40] [INFO] werkzeug[_log] [_internal.py, 122] 127.0.0.1 - - [06/Jun/2019 22:06:40] "POST /sign-in HTTP/1.1" 302 -
+[06/06/2019 22:06:40] [INFO] werkzeug[_log] [_internal.py, 122] 127.0.0.1 - - [06/Jun/2019 22:06:40] "GET /sign-in HTTP/1.1" 200 -
