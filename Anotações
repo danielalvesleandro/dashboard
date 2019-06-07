@@ -327,3 +327,17 @@ python
 b"'\x88\xc2\xee\xd69\xbf\x85\x8e\xf5~u\x15\xefO\x1e"
 
 
+AWS (provisionar aplicação na cloud)
+
+ssh -i python-521.pem ubuntu@18.231.109.74
+
+instalar docker
+instalar jenkins
+instalar python
+
+na máquina local:
+
+pip install paramiko
+criar script provision.py
+
+python provision.py
