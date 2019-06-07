@@ -3,6 +3,7 @@ import functools
 
 import flask
 
+
 def login_required(function):
     @functools.wraps(function)
     def wrapper(*args, **kwargs):
