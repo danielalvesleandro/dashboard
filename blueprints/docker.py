@@ -6,7 +6,7 @@ import docker
 
 import services.auth
 
-connection = docker.DockerClient('tcp://0.0.0.0:2376')
+connection = docker.DockerClient()
 
 blueprint = flask.Blueprint('docker', __name__)
 
